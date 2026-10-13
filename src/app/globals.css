@@ -1,0 +1,141 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* Brand Teal Palette (from official logo #117980) */
+  --color-indigo-50: #eef7f8;
+  --color-indigo-100: #d6eeef;
+  --color-indigo-200: #b0dde0;
+  --color-indigo-300: #7dc5cb;
+  --color-indigo-400: #40a3ac;
+  --color-indigo-500: #1a8f98;
+  --color-indigo-600: #117980;
+  --color-indigo-700: #0e646a;
+  --color-indigo-800: #0b5156;
+  --color-indigo-900: #084044;
+  --color-indigo-950: #032427;
+
+  /* Brand Gold Palette (from official logo #AA762B) */
+  --color-violet-50: #fcf9f2;
+  --color-violet-100: #f7eedd;
+  --color-violet-200: #eddcbc;
+  --color-violet-300: #dec18e;
+  --color-violet-400: #cca059;
+  --color-violet-500: #b88636;
+  --color-violet-600: #aa762b;
+  --color-violet-700: #915e21;
+  --color-violet-800: #764b1d;
+  --color-violet-900: #623e1b;
+  --color-violet-950: #37200a;
+
+  /* Direct Brand Aliases */
+  --color-brand-teal: #117980;
+  --color-brand-gold: #aa762b;
+}
+
+:root {
+  --brand-teal: #117980;
+  --brand-gold: #aa762b;
+}
+
+/* =========================================================================
+   NUMERIC INPUT CLEANUP
+   ========================================================================= */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+/* =========================================================================
+   INSTITUTIONAL PRINT ENGINE
+   Ensures ONLY official donation receipts and document parts print cleanly.
+   ========================================================================= */
+@media print {
+
+  #portal-sidebar,
+  #portal-navbar,
+  #mobile-bottom-nav,
+  aside,
+  header,
+  nav,
+  footer,
+  button,
+  .no-print,
+  .print-hidden,
+  .print\:hidden,
+  [data-no-print="true"] {
+    display: none !important;
+    animation: none !important;
+  }
+
+  html,
+  body,
+  #root,
+  main,
+  div[class*="overflow-y-auto"],
+  div[class*="overflow-hidden"] {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow: visible !important;
+    position: static !important;
+    display: block !important;
+    background: #ffffff !important;
+    color: #0f172a !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  .dark {
+    color-scheme: light !important;
+  }
+
+  .printable-document,
+  .print-document,
+  .print-only,
+  .print\:block {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  .printable-modal-container {
+    position: static !important;
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    max-height: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    overflow: visible !important;
+    background: #ffffff !important;
+  }
+
+  tr,
+  table,
+  .print-avoid-break {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+}

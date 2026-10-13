@@ -1,0 +1,9 @@
+{
+  "/api/donations/route": "app/api/donations/route.js",
+  "/api/donations/import/route": "app/api/donations/import/route.js",
+  "/api/transition/route": "app/api/transition/route.js",
+  "/api/alumni/route": "app/api/alumni/route.js",
+  "/api/announcements/route": "app/api/announcements/route.js",
+  "/api/zones/route": "app/api/zones/route.js",
+  "/page": "app/page.js"
+}
